@@ -1,0 +1,4 @@
+PERTEMUAN PERTAMA
+
+// query ini untuk melihat database
+SHOW DATABASES;
