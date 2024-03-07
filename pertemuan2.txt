@@ -1,0 +1,25 @@
+// Masuk mysql
+mysql -u root -p
+
+// create table jabatan
+CREATE TABLE jabatan(
+    -> id int primary key NOT NULL auto_increment,
+    -> nama varchar(30) NOT NULL unique);
+
+// create table pegawai
+ CREATE TABLE pegawai(
+    -> id int primary key NOT NULL auto_increment,
+    -> nip varchar(30) NOT NULL unique,
+    -> nama varchar(30) NOT NULL,
+    -> email varchar(30),
+    -> tgl_lahir Date,
+    -> jabatan_id int NOT NULL REFERENCES jabatan(id));
+
+// Ubah panjang tipe data
+alter table pegawai modify email varchar(50);
+
+// Hapus field tgl_lahir 
+ALTER TABLE pegawai DROP COLUMN tgl_lahir;
+
+// show table
+desc pegawai;
